@@ -34,6 +34,11 @@ class Welcome extends CI_Controller {
 		$this->load->view('index');
 		$this->load->view('footer');
 	}
+
+    public function bam()
+    {
+        return 'BAM!';
+    }
 	
 }
 

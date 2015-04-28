@@ -5,4 +5,5 @@ logs/
 stats/
 users/
 foodfinderga.org/application/config/database.php
-
+.idea
+.DS_Store
