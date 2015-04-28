@@ -1,0 +1,360 @@
+/* ============== messages ============== */
+.message-sidebar {
+	border-right: 1px solid #EEE;
+	margin: -20px;
+	margin-right: 0;
+}
+
+/* Follow-up custom style */
+.message-sidebar1 span.message-preview {
+	display: block;
+	background-color: #F6F6F6;
+	border-bottom: 1px solid #EEE;
+	padding: 10px 20px;
+}
+
+.message-sidebar1 span.message-preview h4 {
+	font-weight: 400;
+	text-transform: none;
+}
+
+.message-sidebar1 span.message-preview p,.message-sidebar1 span.message-preview h5
+	{
+	color: #999;
+}
+
+/* Follow-up custom style ends */
+.message-sidebar a.message-preview {
+	display: block;
+	background-color: #F6F6F6;
+	border-bottom: 1px solid #EEE;
+	padding: 10px 20px;
+}
+
+.message-sidebar a.message-preview h4 {
+	font-weight: 400;
+	text-transform: none;
+}
+
+.message-sidebar a.message-preview p,.message-sidebar a.message-preview h5
+	{
+	color: #999;
+}
+
+.message-sidebar a.new {
+	background-color: #FFF;
+	font-weight: bold;
+}
+
+.message-sidebar a.new h4,.message-sidebar a.new h5 {
+	font-weight: bold;
+}
+
+.message-sidebar a.active {
+	background-color: #008DCD;
+	color: #FFF;
+}
+
+.message-sidebar a.active p,.message-sidebar a.active h5 {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.message-sidebar a:hover {
+	background-color: #008DCD;
+	color: #FFF;
+}
+
+.message-sidebar a:hover p,.message-sidebar a:hover h5 {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.message-sidebar a:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.message-sidebar .load-more {
+	text-align: center;
+}
+
+.message-sidebar .load-more a {
+	padding: 20px;
+	display: block;
+}
+
+@media ( min-width : 768px) {
+	.message-sidebar {
+		overflow: auto;
+		height: 500px;
+	}
+}
+
+.messages h4 {
+	text-transform: none;
+	font-weight: 400;
+}
+
+.messages .message {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #EEE;
+	margin-bottom: 20px;
+}
+
+.messages .message h5 {
+	font-weight: 300;
+}
+
+.messages .message-body {
+	padding-left: 0px;
+}
+
+.messages .message-body textarea {
+	height: 220px;
+	margin-right: 20px;
+	width: 96%;
+}
+
+.msgnoscroll {
+	height: auto;
+}
+
+.pgnbottom {
+	margin-top: 40px;
+}
+
+.mydate {
+	font-size: 12px;
+}
+/* ============== stream ============== */
+.filters input[type="checkbox"] {
+	float: left;
+	margin-right: 10px;
+}
+
+.filters h5 {
+	margin-top: 20px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #EEE;
+}
+
+.filters span {
+	color: #999;
+}
+
+/* Custom CSS */
+#infoMessage p {
+	margin: 0 !important;
+}
+
+.notification_text {
+	display: none;
+}
+
+table#elm1_tbl {
+	max-width: 150% !important;
+}
+
+.custactive,.custactiveie {
+	display: block;
+	background-image: url('common-icons/active.png');
+	height: 24px;
+	width: 24px;
+}
+
+.custdeactive,.custdeactiveie,.deleteicongrid {
+	display: block;
+	background-image: url('common-icons/de-active.png');
+	height: 24px;
+	width: 24px;
+}
+
+.custedit {
+	display: block;
+	background-image: url('common-icons/edit.png');
+	height: 24px;
+	width: 24px;
+}
+
+.send_message {
+	display: block;
+	background-image: url('common-icons/email_send.png');
+	height: 24px;
+	width: 24px;
+}
+
+.view_message {
+	display: block;
+	background-image: url('common-icons/view2.png');
+	height: 24px;
+	width: 24px;
+}
+
+.edit_message {
+	display: block;
+	background-image: url('common-icons/edit.png');
+	height: 24px;
+	width: 24px;
+}
+
+
+.float_left {
+	float: left;
+	/* margin: 0 5px; */
+}
+
+.float_left:after {
+	content: " ";
+	margin: 5px;
+}
+
+.account-container .brand {
+	display: block;
+	width: 65px;
+	height: 32px;
+	margin: 10px auto;
+	background: url(../img/vitc-logo.png) no-repeat 0 0;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	text-align: center;
+}
+
+.account-container-dup .brand {
+	display: block;
+	width: 65px;
+	height: 32px;
+	margin: 10px auto;
+	background: url(../img/vitc-logo.png) no-repeat 0 0;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	text-align: center;
+}
+
+
+.content { /* over riding default one from application.css */
+	padding-top: 5px;
+}
+
+span.login-checkbox>input[type='checkbox'] {
+	width: 0px;
+}
+
+h4.filter {
+	font-weight: 300;
+	text-transform: uppercase;
+	border-bottom: 1px solid #EEEEEE;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+/* ============== stream ============== */
+.filters input[type="checkbox"] {
+	float: left;
+	margin-right: 10px;
+}
+
+.filters h5 {
+	margin-top: 20px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #EEE;
+}
+
+.filters span {
+	color: #999;
+}
+
+.stream {
+	margin-top: 0px;
+}
+
+.stream .item {
+	border-bottom: 1px solid #EEE;
+	padding: 10px 0px 0px 0px;
+	font-size:13px;
+}
+
+.stream .item .stream-icon {
+	display: inline-block;
+	background-color: #CCC;
+	border-radius: 4px;
+	height: 50px;
+	width: 54px;
+	margin-left: -40px;
+	margin-bottom: -40px;
+	position: relative;
+	/* top: 15px; */
+	right: 20px;
+	float: left;
+}
+
+.stream .item .stream-icon i {
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+.stream .item .stream-success {
+	background-color: #4cb158;
+}
+
+.stream .item .stream-danger {
+	background-color: #ea494a;
+}
+
+.stream .item .stream-warning {
+	background-color: #ffa93c;
+}
+
+.stream .item .stream-info {
+	background-color: #14b8d4;
+}
+
+.stream .item .avatar {
+	border-radius: 4px;
+	margin-left: -40px;
+	margin-bottom: -40px;
+	height: 50px;
+	position: relative;
+	/* top: 15px; */
+	right: 20px;
+	float: left;
+}
+
+.stream .item h4 {
+	margin-bottom: 6px;
+	color: #666;
+}
+
+.stream .item h4 a {
+	color: #666;
+}
+
+.stream .item p {
+	
+	margin-bottom: 10px;
+}
+
+.stream .item p.date {
+	padding: 0;
+	float: right;
+	margin-top: 10px;
+}
+
+.toppagination {
+	margin: 0px !important;
+}
+
+.with_avatar .item {
+	padding: 10px 0px 30px 60px;
+}
+.the-icons
+{
+	list-style-type:none;
+	margin:0;
+	font-size:13px;
+	}
+	.the-icons li{line-height:32px;height:32px;padding-left:12px;}
+	.the-icons li [class^="icon-"],.the-icons li [class*=" icon-"]{width:32px;font-size:13px}
+	/*.the-icons li:hover{background-color:#fbf4f4}.the-icons li:hover [class^="icon-"],.the-icons li:hover [class*=" icon-"]{*font-size:28px;*vertical-align:middle}
+	.the-icons li:hover [class^="icon-"]:before,.the-icons li:hover [class*=" icon-"]:before{font-size:28px;vertical-align:-5px}*/
+	.alert-info
+	{
+	font-size:13px !important;
+	}
+	.searchbutlinks { margin-top:5px;}
+	.leadinfo { font-size:13px;}

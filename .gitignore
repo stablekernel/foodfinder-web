@@ -1,0 +1,8 @@
+data/
+docs/
+etc/
+logs/
+stats/
+users/
+foodfinderga.org/application/config/database.php
+
