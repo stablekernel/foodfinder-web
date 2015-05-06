@@ -35,10 +35,11 @@ class Welcome extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-    public function bam()
-    {
-        return 'BAM!';
-    }
+   // #Maps to: http://foodfinderga.org/welcome/bam
+   // public function bam()
+   // {
+   //     die('BAM!');
+   // }
 	
 }
 

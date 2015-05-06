@@ -3,10 +3,12 @@
         <div class="login-bg">            
             <div style="padding-top:3%;padding-bottom: 2%;" align="center"><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>img/front/logo.png" border="0" class="img-responsive" ></a></div>
             <div align="center" class="homefont">Welcome to Food Finder GA</div>            
-            <div align="center" class="homefont1">The easiest and fastest way to find food resources in Gwinnett County.</div>
+            <div align="center" class="homefont1">
+                The Fastest Way to Find Food Resources in Georgia
+            </div>
             
             <div class="footer-bg clearfix">
-                <div align="center" class="homefont2">Click an icon to find food near your ...</div>                
+                <div align="center" class="homefont2">Click a Button To Find Food Near Your...</div>
                 <div class="icon_layout_outer">
                     <div class="icon_layout_inner">
                     <div class="icon_div"><a href="<?php echo site_url('school'); ?>"><img src="<?php echo base_url(); ?>img/front/school_new.png" border="0"></a></div>
