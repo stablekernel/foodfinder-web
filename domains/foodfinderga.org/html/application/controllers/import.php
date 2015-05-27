@@ -6,6 +6,7 @@ class Import extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('upload');
 		$this->load->database();
+		$this->load->library('curl');
 	}
 
 	public function index(){	
@@ -16,7 +17,6 @@ class Import extends CI_Controller {
 		$data 			= ($_FILES['import_csv']);
 		$temp_filename 	= $data['tmp_name'];
 		$file_resource 	= fopen ($temp_filename , 'r');
-		$size 			= $data['size'];
 		$table 			= [];
 
 		while(($row 	= fgetcsv($file_resource)) !== false){
@@ -84,6 +84,81 @@ class Import extends CI_Controller {
 		endforeach;
 
 		return $data;
+	}
+
+	/**
+	* Grabs all the providers that have a blank latitude or longitude
+	*/
+	public function pullProvidersWithoutGeo(){
+		$results = array();
+		$sql 	 = "SELECT * FROM ff_provider WHERE latitude = '' or longitude = ''";
+		$query   = $this->db->query($sql);
+		
+		foreach($query->result() as $result):
+			array_push($results, $result);	
+		endforeach;	
+		
+		return $results;
+	}
+
+	public function geodata(){
+		$toUpdate = FALSE;
+		if(array_key_exists('update', $_GET) && strlen($_GET['update']) > 0) $toUpdate = TRUE;
+		
+		if(! $toUpdate) {
+			$this->load->view('geodata', array('error' => ' ')); 
+		} else {
+			$providers = $this->pullProvidersWithoutGeo();
+			$decoratedProviders = $this->populateGeoDataPerProvider($providers);
+			$this->dd($decoratedProviders);
+		}
+	}
+
+	public function decorateProviderWithGoogleMapsApiData($provider){
+		$url 			 = '';
+		$GeoData 		 = 'w'; 
+		$base_api_url 	 = "http://maps.googleapis.com/maps/api/geocode/json?address=";
+		$country 	 	 = 'United States';
+		$APIKEY 		 = 'AIzaSyCeluQNCbj636CiqcBTlW7RuMjHU1l6H8o';
+
+		$address 	 	 = $provider->streetaddress1 . ',' . $provider->city . ',' . $provider->state . ',' . $country . "&sensor=false&key=" . $APIKEY;
+		$address 		 = str_replace(',', '+', $address);
+		$address 		 = urlencode($address);
+		$url 			 = $base_api_url . $address; 
+		
+
+		$this->curl->create($url);
+		
+		//$this->curl->option('useragent', 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.8) Gecko/20100722 Firefox/3.6.8 (.NET CLR 3.5.30729)');
+		//$this->curl->option('returntransfer', 1);
+		//$this->curl->option('followlocation', 1);
+		//$this->curl->option('HEADER', false);
+		$this->curl->option('connecttimeout', 600);
+		$data = $this->curl->execute();
+		$data = json_decode($data);
+
+		//TODO: If no result is set handle the error accordingly
+		$geo  = $data->results[0]->geometry->location;
+		$provider->latitude  = $geo->lat;
+		$provider->longitude = $geo->lng;
+		
+		return $provider;
+	}
+
+	public function populateGeoDataPerProvider($providers){
+		$decoratedProviders = array();
+		
+		foreach($providers as $idx => $provider):
+			array_push($decoratedProviders, $this->decorateProviderWithGoogleMapsApiData($provider));
+			$this->updateProviderWithGeoData($provider);
+		endforeach;	
+
+		return $decoratedProviders;
+	}
+
+	public function updateProviderWithGeoData($provider){
+		$sql = "UPDATE ff_provider SET latitude = ".$this->db->escape($provider->latitude).", longitude = ".$this->db->escape($provider->longitude) ." WHERE provider_id = ".$provider->provider_id;
+		$this->db->query($sql);
 	}
 
 	public function dd($data){
