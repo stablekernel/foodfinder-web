@@ -8,13 +8,13 @@
             </div>
             
             <div class="footer-bg clearfix">
-                <div align="center" class="homefont2">Click a Button To Find Food Near Your...</div>
-                <div class="icon_layout_outer">
+                <div align="center" class="homefont2">Click or Tap or a Button To Find Food Near Your:</div>
+                <div id="mainNav" class="icon_layout_outer">
                     <div class="icon_layout_inner">
-                    <div class="icon_div"><a href="<?php echo site_url('school'); ?>"><img src="<?php echo base_url(); ?>img/front/school_new.png" border="0"></a></div>
-                    <div class="icon_div"><a href="<?php echo site_url('school/homeway'); ?>"><img src="<?php echo base_url(); ?>img/front/home_new.png" border="0"></a></div>
+                    <div class="icon_div"><a href="<?php echo site_url('school'); ?>"><img src="<?php echo base_url(); ?>img/front/school_new.png" border="0">School</a></div>
+                    <div class="icon_div"><a href="<?php echo site_url('school/homeway'); ?>"><img src="<?php echo base_url(); ?>img/front/home_new.png" border="0">Home</a></div>
  <!--                   <div class="icon_div"><a href="<?php //echo site_url('school/locationway'); ?>"><img src="<?php //echo base_url(); ?>img/front/location.png" border="0""></a></div> -->
-                    <div class="icon_div"><a href ="<?php echo site_url('school/locationway'); ?>"><img src="<?php echo base_url(); ?>img/front/location_new.png" border="0"></a></div>
+                    <div class="icon_div"><a href ="<?php echo site_url('school/locationway'); ?>"><img src="<?php echo base_url(); ?>img/front/location_new.png" border="0">Current Location</a></div>
 
                     <div style="clear:both"></div>
   

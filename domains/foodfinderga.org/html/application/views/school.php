@@ -9,19 +9,18 @@
             </div>
             <div class="footer-bg clearfix">
                 <div class="back_icon"><a href="<?php echo base_url(); ?>" id="" ><img src="<?php echo base_url(); ?>img/front/close.png" alt="close" width="80%" height="80%"></a></div>
-                <div align="center" class="searchschool_font">Type your school name here ...</div>
                 <div style="clear:both;"></div>
                 <div class="searchschool_form">                    
                     <form id="addgroup-form" method="post" novalidate='novalidate' class='validate' accept-charset="utf-8">
                         <div align="center">
-                            <input type="text" value="" name="schooladdress" id="schooladdress" onchange="return tempschooladdress();" onblur="return tempschooladdress();" onkeyup="return tempschooladdress();" onfocus="return tempschooladdress();" />
+                            <input type="text" value="" placeholder="Enter your school name here" name="schooladdress" id="schooladdress" onchange="return tempschooladdress();" onblur="return tempschooladdress();" onkeyup="return tempschooladdress();" onfocus="return tempschooladdress();" />
 
                             <input type="hidden" name="school_id"  id="school_id">
                             <input type="hidden" name="school_name"  id="school_name">
                             <input type="hidden" name="latitude"  id="latitude">
                             <input type="hidden" name="longitude"  id="longitude">
 
-                            <button id="submit" name="submit" class="button_searchschool" >GO!</button>
+                            <input id="submit" type="submit" value="Go!" name="submit" class="button_searchschool" >
                         </div> 
                     </form>                    
                 </div>
@@ -57,8 +56,7 @@
 
     }
     });
-   function tempschooladdress()
-    {
+   function tempschooladdress(){
         var schooladdress = $("#schooladdress").val();
         $.ajax({ url: "<?php echo base_url();?>school/list_schooladdress",
                 data: { schooladdress: $("#schooladdress").val()  },
@@ -74,5 +72,8 @@
             });
 
     }
-   
+   $('body').on('click', 'a.ui-corner-all', function(evt){
+        evt.preventDefault();
+        
+   });
 </script>

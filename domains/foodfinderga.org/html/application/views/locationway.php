@@ -8,16 +8,21 @@
             </div>
             <div class="footer-bg clearfix">
                 <div class="back_icon"><a href="<?php echo base_url(); ?>" id="" ><img src="<?php echo base_url(); ?>img/front/close.png" alt="close" width="80%" height="80%"></a></div>
-                <div align="center" class="searchschool_font">Type a street address, zip code, city or click the blue pin for your location<br/> to find food resources...</div>
-                <div style="clear:both;"></div>
-                <div class="searchschool_form">                    
-                    <form id="addgroup-form" method="post" novalidate='novalidate' class='validate' accept-charset="utf-8">
-                        <div align="center">
-                            <input type="text" value="" name="homeaddress" id="homeaddress" />&nbsp;&nbsp;<img class="locimg" src="<?php echo base_url(); ?>img/front/loc_icon.png" title="Click here for location search"/>
-                            <button id="submit" name="submit" class="button_searchschool">GO!</button>
-                        </div> 
-                    </form>                    
-                </div>
+                <div id="locationWrapper">
+                    <p id="locationInstructions" class="searchschool_font">
+                        Click or Tap the Blue Pin Below for your Current Location 
+                    </p>
+                    <div style="clear:both;"></div>
+                    <div class="searchschool_form">                    
+                        <form id="addgroup-form" method="post" novalidate='novalidate' class='validate' accept-charset="utf-8">
+                            <div align="center">
+                                <img class="locimg" src="<?php echo base_url(); ?>img/front/loc_icon.png" title="Click here for location search"/>
+                                <input type="text" value="" placeholder="Enter your street address, city name, zip code, or county" name="homeaddress" id="homeaddress" />
+                                <button id="submit" name="submit" class="button_searchschool">GO!</button>
+                            </div> 
+                        </form>                    
+                    </div>
+                </div>   
                 <div style="clear:both; height:30px;"><!-- --></div>
                 <?php include('footer_menu.php'); ?>
             </div>

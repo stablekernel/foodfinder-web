@@ -88,7 +88,6 @@ class School extends CI_Controller {
 	}
 	public function schoolmap()
 	{
-		die('here');
 		$schoolid=$this->uri->segment(3);
 		$schoolname=$this->uri->segment(4);
 		$latitude=$this->uri->segment(5);

@@ -11,20 +11,33 @@
             	<div class="p_name"><b><?php echo $provider[0]['providername'];?></b></b></div>
             	<div class="p_street1"><?php echo $provider[0]['streetaddress1'];?></div>
             	<div class="p_street2"><?php echo $provider[0]['streetaddress2'];?></div>
-            	<div class="p_city"><?php echo $provider[0]['city'];?></div>
-            	<div class="p_state"><?php echo $provider[0]['state'];?></div>
+            	<div class="p_city"><?php echo $provider[0]['city'];?>, <?php echo $provider[0]['state'];?>, <?php echo $provider[0]['zipcode'];?></div>
             	<div class="p_country"><?php echo $provider[0]['county'];?></div>
-            	<div class="p_zip"><?php echo $provider[0]['zipcode'];?></div>
-            	<div class="p_zip"><?php echo $provider[0]['contactperson'];?>&nbsp;&nbsp;<a href="tel:<?php echo $provider[0]['phonenumber'];?>"><?php echo $provider[0]['phonenumber'];?></a>&nbsp;&nbsp;<?php echo $provider[0]['email'];?></div>
+
+            	<div class="p_zip">
+                    <?php echo $provider[0]['contactperson'];?>
+                    <a href="tel:<?php echo $provider[0]['phonenumber'];?>"><?php echo $provider[0]['phonenumber'];?></a>&nbsp;&nbsp;
+                    <?php echo $provider[0]['email'];?>
+                </div>
+
             	<?php if($provider[0]['url']){ ?>
             	<div class="p_zip"><?php echo $provider[0]['url'];?></div>
             	<?php } ?>
             	<?php if(($provider[0]['operatingdays']) || ($provider[0]['operatinghours'])) { ?>
             	<div class="p_zip"><?php echo $provider[0]['operatingdays'];?>&nbsp;&nbsp;<?php echo $provider[0]['operatinghours'];?></div>
             	<?php } ?>
-            	<?php if(($provider[0]['servicearea']) || ($provider[0]['languages'])) { ?>
-            	<div class="p_zip"><?php echo $provider[0]['servicearea'];?>&nbsp;&nbsp;<?php echo $provider[0]['languages'];?></div>
+
+            	<?php if(($provider[0]['servicearea'])) { ?>
+            	   <div class="p_zip"><?php echo $provider[0]['servicearea'];?></div>
             	<?php } ?>
+
+                <?php if(($provider[0]['languages'])) { ?>
+                    <div class="p_zip"><?php echo $provider[0]['languages'];?></div>
+                <?php } ?>
+
+                <?php if(array_key_exists('services', $provider[0])) { ?>
+                    <div class="p_zip"><?php echo $provider[0]['services'];?></div>
+                <?php } ?>
             </div>
             </div>
             <div style="clear:both; height:20px;"><!-- --></div>

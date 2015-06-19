@@ -2325,3 +2325,89 @@ Layout: Responsive
     display: none !important;
   }
 }
+
+#mainNav  .icon_div a {
+  color: #fff;
+  font-size: 14pt;
+  text-align: center;
+  display: block;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+}
+#mainNav  .icon_div a:hover {
+  text-decoration: none;
+  font-weight: 100;
+}
+
+#our_story .login-bg {
+  min-height: 700px;
+  overflow: hidden;
+}
+
+#our_story .content {
+  color: #efefef;
+  padding: 16px 10% 23px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.42);
+  width: 80%;
+  margin: 25px auto;
+  font-size: 12pt;
+  line-height: 1.4;
+}
+
+#locationInstructions {
+  text-align: center;
+}
+
+.searchschool_form form .inputLabel {
+  color: #efefef;
+  text-align: center;
+  display: block;
+  margin: 0;
+  font-size: 14pt;
+  background-color: #51b645;
+  width: 35%;
+  float: left;
+  border-radius: 5px 5px 0 0;
+  padding: 7px 4px;
+}
+
+#locationWrapper .locimg {
+  margin: 8px 15px 0;
+  float: left;
+}
+
+.searchschool_font { 
+  margin-top: 2%;
+}
+
+.searchschool_form input[type="text"], .searchschool_form #addgroup-form input[type="text"] {
+  float: left;
+  width: 90%;
+  color: #efefef;
+  box-sizing: border-box;
+  padding: 23px 2%;
+  margin-right: 0;
+  font-size: 14pt;
+}
+
+.searchschool_form .button_searchschool {
+  margin-left: 0.5%;  
+  float: right;
+}
+
+.searchschool_form input[type="text"]::-webkit-input-placeholder {
+   color: #efefef;
+}
+
+.searchschool_form input[type="text"]:-moz-placeholder { /* Firefox 18- */
+   color: #efefef;  
+}
+
+.searchschool_form input[type="text"]::-moz-placeholder {  /* Firefox 19+ */
+   color: #efefef;  
+}
+
+.searchschool_form input[type="text"]:-ms-input-placeholder {  
+   color: #efefef;  
+}

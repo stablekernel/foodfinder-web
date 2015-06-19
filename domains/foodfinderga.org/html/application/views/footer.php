@@ -1,3 +1,4 @@
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>  -->
 <script src="<?php echo base_url();?>js/libs/jquery-1.7.2.min.js"></script>
 <script src="<?php echo base_url();?>js/jquery.confirm.js"></script>
 <script defer src="<?php echo base_url();?>foodfinderga/common.js" type="text/javascript" language="javascript"></script>

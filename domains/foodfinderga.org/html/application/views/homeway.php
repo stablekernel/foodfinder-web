@@ -8,7 +8,6 @@
             </div>
             <div class="footer-bg clearfix">
                 <div class="back_icon"><a href="<?php echo base_url(); ?>" id="" ><img src="<?php echo base_url(); ?>img/front/close.png" alt="close" width="80%" height="80%"></a></div>
-                <div align="center" class="searchschool_font">Type a street address, zip code, or city to find food resources...</div>
                 <div style="clear:both;"></div>
                 <div class="searchschool_form">                    
                     <form id="addgroup-form" name="home_form" method="post" novalidate='novalidate' class='validate' accept-charset="utf-8">
@@ -19,7 +18,8 @@
                             else
                                 $hmedata ='';
                             ?>
-                            <input type="text" value="<?php echo $hmedata; ?>" name="homeaddress" id="homeaddress" />
+                            <p class="inputLabel">Find food resources close to your home</p>
+                            <input placeholder="Enter your Street Address, City, Zip Code or County" type="text" value="<?php echo $hmedata; ?>" name="homeaddress" id="homeaddress" />
                             <button id="submit" name="submit" class="button_searchschool">GO!</button>
                         </div> 
                     </form>                    
