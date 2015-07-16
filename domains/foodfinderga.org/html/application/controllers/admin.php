@@ -319,7 +319,11 @@ class Admin extends CI_Controller {
 
 	public function provideredit()
 	{
-		$id = $this->uri->segment(3);
+		$id 		= $this->uri->segment(3);
+		$provider 	= $this->adminhelper->getProvider($id);
+		$state 		= $provider['0']['state'];
+		$citylist 	= $this->adminhelper->getCityByStateSelectElement($state, $provider);
+
 		if(isset($_POST["updateprovider"])):
 			$data = $this->input->post();
 			$checkvalue=$this->adminhelper->checkprovideraddress1($id,$data);
@@ -348,7 +352,9 @@ class Admin extends CI_Controller {
 			$data['school']=$this->adminhelper->allschools();
 			$data['schoollist']=$this->adminhelper->load_single_schoollist($id);
 			$data["allstatelist"]=$this->adminhelper->allstatelist();
+			$data["allcitylist"] = $citylist;
 			$data['results'] = $this->adminhelper->load_single_provider($id);
+
 			$this->load->view('admin/header',$data);
 			$this->load->view('admin/editprovider');
 			$this->load->view('admin/footer');		

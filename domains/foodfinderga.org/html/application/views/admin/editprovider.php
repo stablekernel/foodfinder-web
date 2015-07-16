@@ -41,19 +41,21 @@
 					    <div class="control-group">
 					      <label class="control-label" for="group">City <Mandatory>*</Mandatory></label>
                           <div class="controls" id="citynamediv">
-                          <?php $city=$results[0]->city;?>
+                          <?php $city=$results[0]->city; ?>
+
                           <?php if(!empty($getproductname)){ ?>
-                          <select id="city" name="city">
-                          <option value="">Select city</option>
-                          <?php  for($i=0;$i<count($getproductname);$i++) { ?>
-                          <option value="<?php echo $getproductname[$i]->product_id; ?>"><?php echo $getproductname[$i]->product_name; ?></option>
-                          <?php } ?>
-                          </select>
-						  <?php } else { ?>
-					      <select id="city" name="city">
-                          <option value="<?php echo $city ?>"><?php echo $city ?></option>
-                          </select>
-                          <?php } ?>
+	                          <select id="city" name="city">
+		                          <option value="">Select city</option>
+	                          	  <?php  for($i=0;$i<count($getproductname);$i++) { ?>
+	                          	  <option value="<?php echo $getproductname[$i]->product_id; ?>"><?php echo $getproductname[$i]->product_name; ?></option>
+	                              <?php } ?>
+                          	  </select>
+						  <?php 
+							} else { 
+								echo $allcitylist;
+								
+                            } 
+                          ?>
                           </div>
 					    </div>
 					    <div class="control-group">
