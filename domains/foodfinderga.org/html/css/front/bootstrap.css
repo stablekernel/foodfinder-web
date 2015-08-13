@@ -7,15 +7,23 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
- 
-.full-wdith { width:100%; margin: 0 auto; background-color:#000; font-family:Arial;}
-.desktop-bg { width:1220px; margin: 0 auto; }
+ body { 
+   background: #000 url(../../img/front/bg.png); 
+   background-size: 100%;
+   background-repeat: no-repeat;
+  /*-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+   background-size: cover;*/
+ }
+.full-wdith { width:100%; margin: 0 auto; font-family:Arial;}
+.desktop-bg { /*width:1220px;*/ margin: 0 auto; width:100%; }
 .login-bg {
-  background: url(../../img/front/bg.png) no-repeat center center fixed; 
+ /* background: url(../../img/front/bg.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-   background-size: cover;
+   background-size: cover;*/
     
 /*    background: url(../../img/front/bg.png) center top no-repeat;*/
 }

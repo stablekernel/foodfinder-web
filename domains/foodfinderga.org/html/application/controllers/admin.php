@@ -256,11 +256,11 @@ class Admin extends CI_Controller {
 			$data = $this->input->post();
 			$checkvalue=$this->adminhelper->checkprovideraddress($data);
 			if($checkvalue==4) {
-				if(!isset($data['school']))
-				{
-					$this->session->set_flashdata('errmsg', 'Please add school');
-					redirect('admin/addprovider','refresh');
-				}
+				// if(!isset($data['school']))
+				// {
+				// 	$this->session->set_flashdata('errmsg', 'Please add school');
+				// 	redirect('admin/addprovider','refresh');
+				// }
 				$insertaction = $this->adminhelper->addprovider($data);
 				if($insertaction==false):
 					$this->session->set_flashdata('errmsg', 'Already provider added');
@@ -328,11 +328,11 @@ class Admin extends CI_Controller {
 			$data = $this->input->post();
 			$checkvalue=$this->adminhelper->checkprovideraddress1($id,$data);
 			if($checkvalue==5) {
-				if(!isset($data['school']))
-				{
-					$this->session->set_flashdata('errmsg', 'Please add school');
-					redirect('admin/provideredit/'.$id);
-				}
+				// if(! isset($data['school']))
+				// {
+				// 	$this->session->set_flashdata('errmsg', 'Please add school');
+				// 	redirect('admin/provideredit/'.$id);
+				// }
 				$insertaction = $this->adminhelper->updateprovider($id,$data);
 				if($insertaction==false):
 					$this->session->set_flashdata('errmsg', 'Already provider added');
@@ -346,6 +346,7 @@ class Admin extends CI_Controller {
 				redirect('admin/provideredit/'.$id);
 			}			
 		else:
+			
 			$data = $this->session->userdata('user');
 			$data = array();
 			$data['pageName'] = $this->uri->segment(2);

@@ -16,13 +16,13 @@
 					      </div>
 					    </div>
 					    <div class="control-group">
-					      <label class="control-label" for="supplier_name">School Address1 <Mandatory>*</Mandatory></label>
+					      <label class="control-label" for="supplier_name">Provider Address1 <Mandatory>*</Mandatory></label>
 					      <div class="controls">
 					        <input type="text" class="input-large" name="streetaddress1" id="streetaddress1" maxlength="100">
 					      </div>
 					    </div>
 					    <div class="control-group">
-					      <label class="control-label" for="name">School Address2</label>
+					      <label class="control-label" for="name">Provider Address2</label>
 					      <div class="controls">
 					        <input type="text" class="input-large" name="streetaddress2" id="streetaddress2" maxlength="100">
 					      </div>

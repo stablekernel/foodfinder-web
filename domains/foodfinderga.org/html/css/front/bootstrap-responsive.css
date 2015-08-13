@@ -60,9 +60,12 @@
 .visible-desktop {
   display: inherit !important;
 }
+@media(max-width: 420px) {
+  body { background-size: 175%; background-position-x: -120px;}  
+}
 
 @media (min-width: 768px) and (max-width: 979px) {
-.full-wdith { width:100%; margin: 0 auto; background-color:#000; }
+.full-wdith { width:100%; margin: 0 auto; }
 .desktop-bg { width:100%; margin: 0 auto; }
 .footer-bg { background: none repeat scroll 0 0 rgba(225, 85, 22, 0.4); background-repeat:no-repeat; background-position:bottom left; width:100%; }
 .homefont { font-size:60px; color:#FFF; font-family:arial; line-height:65px; }
@@ -89,7 +92,7 @@
 }
 
 @media (max-width: 767px) {
-.full-wdith { width:100%; margin: 0 auto; background-color:#000; }
+.full-wdith { width:100%; margin: 0 auto;  }
 .desktop-bg { width:100%; margin: 0 auto; }
 .footer-bg { background: none repeat scroll 0 0 rgba(225, 85, 22, 0.4); background-repeat:repeat; background-position:bottom left; width:100%; }
 .homefont { font-size:60px; color:#FFF; font-family:arial; line-height:65px; }

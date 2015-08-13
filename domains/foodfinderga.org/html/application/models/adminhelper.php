@@ -284,6 +284,7 @@ class Adminhelper extends CI_Model {
 			$insert=array('providername'=>$data['providername'],'streetaddress1'=>$data['streetaddress1'],'streetaddress2'=>$data['streetaddress2'],'city'=>$data['city'],'county'=>$data['county'],'state'=>$data['state'],'zipcode'=>$data['zipcode'],'phonenumber'=>$data['phonenumber'],'url'=>$data['url'],'email'=>$data['pemail'],'contactperson'=>$data['contactperson'],'operatingdays'=>$data['operatingdays'],'operatinghours'=>$data['operatinghours'],'servicearea'=>$data['servicearea'],'languages'=>$data['languages'],'services1'=>$data['services1'],'services2'=>$data['services2'],'services3'=>$data['services3'],'latitude'=>$latitude,'longitude'=>$longitude);
 			$this->db->insert('ff_provider',$insert);
 			$provider_id =$this->db->insert_id();
+
 			foreach($data['school'] as $schoolid) {
 				$insertgroup=array('provider_id'=>$provider_id,'school_id'=>$schoolid);
 				$this->db->insert('ff_providergroup',$insertgroup);
@@ -359,9 +360,10 @@ class Adminhelper extends CI_Model {
 			$res = $this->db->update('ff_provider', $insert, "provider_id = '{$id}'");
 			$provider_id =$id;
 			$this->db->delete('ff_providergroup', array('provider_id' => $provider_id));			
+
 			foreach($data['school'] as $schoolid) {
-				$insertgroup=array('provider_id'=>$provider_id,'school_id'=>$schoolid);
-				$this->db->insert('ff_providergroup',$insertgroup);
+				$insertgroup=array('provider_id'=>$provider_id, 'school_id'=>$schoolid);
+				$this->db->insert('ff_providergroup', $insertgroup);
 			}
 			$ErrorMessage=3;
 		}
