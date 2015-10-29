@@ -285,10 +285,6 @@ class Adminhelper extends CI_Model {
 			$this->db->insert('ff_provider',$insert);
 			$provider_id =$this->db->insert_id();
 
-			foreach($data['school'] as $schoolid) {
-				$insertgroup=array('provider_id'=>$provider_id,'school_id'=>$schoolid);
-				$this->db->insert('ff_providergroup',$insertgroup);
-			}
 			$ErrorMessage=3;
 		}
 		return $ErrorMessage;
@@ -361,10 +357,6 @@ class Adminhelper extends CI_Model {
 			$provider_id =$id;
 			$this->db->delete('ff_providergroup', array('provider_id' => $provider_id));			
 
-			foreach($data['school'] as $schoolid) {
-				$insertgroup=array('provider_id'=>$provider_id, 'school_id'=>$schoolid);
-				$this->db->insert('ff_providergroup', $insertgroup);
-			}
 			$ErrorMessage=3;
 		}
 		return $ErrorMessage;

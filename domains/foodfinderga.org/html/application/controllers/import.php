@@ -98,7 +98,7 @@ class Import extends CI_Controller {
 			$SCHOOL_ZIP 	= $row->SCHOOL_ZIP;
 		 	$SCHOOL_PHONE 	= $row->SCHOOL_PHONE;
 
-			$sql = "INSERT INTO ff_school (school_name, school_address1, city, state, County, zipcode, phonenumber) 
+			$sql = "INSERT INTO ff_school (school_name, school_address1, city, state, county, zipcode, phonenumber)
 			VALUES ("
 			.$this->db->escape($SCHOOL_NAME).","
 			.$this->db->escape($SCHOOL_ADDRESS).","
