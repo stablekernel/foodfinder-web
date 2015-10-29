@@ -277,7 +277,6 @@ class Admin extends CI_Controller {
 
 		$data = $this->session->userdata('user');
 		$data = array();
-		$data['schoollist']=$this->adminhelper->allschools();
 		$data['pageName'] = $this->uri->segment(2);
 		$data["allstatelist"]=$this->adminhelper->allstatelist();		
 		$this->load->view('admin/header',$data);
@@ -351,7 +350,6 @@ class Admin extends CI_Controller {
 			$data = array();
 			$data['pageName'] = $this->uri->segment(2);
 			$data['school']=$this->adminhelper->allschools();
-			$data['schoollist']=$this->adminhelper->load_single_schoollist($id);
 			$data["allstatelist"]=$this->adminhelper->allstatelist();
 			$data["allcitylist"] = $citylist;
 			$data['results'] = $this->adminhelper->load_single_provider($id);

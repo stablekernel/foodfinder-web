@@ -74,16 +74,6 @@
 					      </div>
 					    </div>
                         <div class="control-group">
-					      <label class="control-label" for="store">School Name <Mandatory>*</Mandatory></label>
-					      <div class="controls">
-					        <select data-placeholder="Select school name" id="school[]" name="school[]" multiple="multiple" class="chosen">
-                          <?php foreach($schoollist as $fields){ ?>
-                          <option value="<?php echo $fields["school_id"]; ?>"><?php echo $fields["school_name"]; ?></option>
-                          <?php } ?>
-                          </select><br /><span style="color:#F00;">Note: Multiple schools can be selected</span>
-					      </div>
-					    </div>                        
-                        <div class="control-group">
 					      <label class="control-label" for="store">Phone Number</label>
 					      <div class="controls">
 					        <input type="text" class="input-large" name="phonenumber" id="phonenumber" maxlength="100">

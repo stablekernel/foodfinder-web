@@ -76,15 +76,6 @@
 					        <input type="text" class="input-large" name="pemail" id="pemail" maxlength="100" value="<?php echo $results[0]->email;?>" />
 					      </div>
 					    </div>
-                        <div class="control-group">
-					      <label class="control-label" for="store">School Name <Mandatory>*</Mandatory></label>
-                          <div class="controls"><?php $listschool=array(); for($i=0;$i<count($schoollist);$i++) { $listschool[] = $schoollist[$i]->school_name; } ?>
-                          <select id="school[]" name="school[]" multiple="multiple" class="chosen">
-                          <?php foreach($school as $fields){ ?>
-                          <option value="<?php echo $fields["school_id"]; ?>" <?php if (in_array($fields["school_name"], $listschool, true)) { echo "selected"; } ?>><?php echo $fields["school_name"]; ?></option>
-                          <?php  } ?>
-                          </select><br /><span style="color:#F00;">Note: Multiple schools can be selected</span></div>
-					    </div>
 					    <div class="control-group">
 					      <label class="control-label" for="store">Phone Number</label>
 					      <div class="controls">
