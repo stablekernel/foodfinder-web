@@ -64,8 +64,11 @@
 .footer-text { color:#FFF; margin-top: 2%;padding-bottom:1%; font-size:16px}
 #fixed-div { position:absolute;top:0;right:0; }
 .searchschool_form{
+    display:block;
     width:80%;
-    margin:0 auto;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
     margin-top:30px;
 }
 #addgroup-form input{

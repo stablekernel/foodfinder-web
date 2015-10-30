@@ -20,7 +20,7 @@
                             <input type="hidden" name="latitude"  id="latitude">
                             <input type="hidden" name="longitude"  id="longitude">
 
-                            <input id="submit" type="submit" value="Go!" name="submit" class="button_searchschool" >
+                            <button id="submit" name="submit" class="button_searchschool">GO!</button>
                         </div> 
                     </form>                    
                 </div>
