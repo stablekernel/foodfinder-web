@@ -95,10 +95,10 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
      * Create a new PHPExcel_Style
      *
      * @param boolean $isSupervisor Flag indicating if this is a supervisor or not
-     * 		Leave this value at default unless you understand exactly what
+     *        Leave this value at default unless you understand exactly what
      *    its ramifications are
      * @param boolean $isConditional Flag indicating if this is a conditional style or not
-     *   	Leave this value at default unless you understand exactly what
+     *    Leave this value at default unless you understand exactly what
      *    its ramifications are
      */
     public function __construct($isSupervisor = false, $isConditional = false)
@@ -107,13 +107,13 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
         $this->_isSupervisor = $isSupervisor;
 
         // Initialise values
-        $this->_conditionalStyles	= array();
-        $this->_font              = new PHPExcel_Style_Font($isSupervisor, $isConditional);
-        $this->_fill              = new PHPExcel_Style_Fill($isSupervisor, $isConditional);
-        $this->_borders           = new PHPExcel_Style_Borders($isSupervisor, $isConditional);
-        $this->_alignment         = new PHPExcel_Style_Alignment($isSupervisor, $isConditional);
-        $this->_numberFormat      = new PHPExcel_Style_NumberFormat($isSupervisor, $isConditional);
-        $this->_protection        = new PHPExcel_Style_Protection($isSupervisor, $isConditional);
+        $this->_conditionalStyles = array();
+        $this->_font = new PHPExcel_Style_Font($isSupervisor, $isConditional);
+        $this->_fill = new PHPExcel_Style_Fill($isSupervisor, $isConditional);
+        $this->_borders = new PHPExcel_Style_Borders($isSupervisor, $isConditional);
+        $this->_alignment = new PHPExcel_Style_Alignment($isSupervisor, $isConditional);
+        $this->_numberFormat = new PHPExcel_Style_NumberFormat($isSupervisor, $isConditional);
+        $this->_protection = new PHPExcel_Style_Protection($isSupervisor, $isConditional);
 
         // bind parent if we are a supervisor
         if ($isSupervisor) {
@@ -190,8 +190,8 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
      * );
      * </code>
      *
-     * @param    array    $pStyles    Array containing style information
-     * @param     boolean        $pAdvanced    Advanced mode for setting borders.
+     * @param    array $pStyles Array containing style information
+     * @param     boolean $pAdvanced Advanced mode for setting borders.
      * @throws    PHPExcel_Exception
      * @return PHPExcel_Style
      */
@@ -215,11 +215,11 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
 
                 // Calculate range outer borders
                 $rangeStart = PHPExcel_Cell::coordinateFromString($rangeA);
-                $rangeEnd     = PHPExcel_Cell::coordinateFromString($rangeB);
+                $rangeEnd = PHPExcel_Cell::coordinateFromString($rangeB);
 
                 // Translate column into index
-                $rangeStart[0]    = PHPExcel_Cell::columnIndexFromString($rangeStart[0]) - 1;
-                $rangeEnd[0]    = PHPExcel_Cell::columnIndexFromString($rangeEnd[0]) - 1;
+                $rangeStart[0] = PHPExcel_Cell::columnIndexFromString($rangeStart[0]) - 1;
+                $rangeEnd[0] = PHPExcel_Cell::columnIndexFromString($rangeEnd[0]) - 1;
 
                 // Make sure we can loop upwards on rows and columns
                 if ($rangeStart[0] > $rangeEnd[0] && $rangeStart[1] > $rangeEnd[1]) {
@@ -274,12 +274,12 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
                         // start column index for region
                         $colStart = ($x == 3) ?
                             PHPExcel_Cell::stringFromColumnIndex($rangeEnd[0])
-                                : PHPExcel_Cell::stringFromColumnIndex($rangeStart[0] + $x - 1);
+                            : PHPExcel_Cell::stringFromColumnIndex($rangeStart[0] + $x - 1);
 
                         // end column index for region
                         $colEnd = ($x == 1) ?
                             PHPExcel_Cell::stringFromColumnIndex($rangeStart[0])
-                                : PHPExcel_Cell::stringFromColumnIndex($rangeEnd[0] - $xMax + $x);
+                            : PHPExcel_Cell::stringFromColumnIndex($rangeEnd[0] - $xMax + $x);
 
                         for ($y = 1; $y <= $yMax; ++$y) {
 
@@ -322,7 +322,7 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
                             unset($regionStyles['borders']['inside']);
 
                             // what are the inner edges of the region when looking at the selection
-                            $innerEdges = array_diff( array('top', 'right', 'bottom', 'left'), $edges );
+                            $innerEdges = array_diff(array('top', 'right', 'bottom', 'left'), $edges);
 
                             // inner edges that are not touching the region should take the 'inside' border properties if they have been set
                             foreach ($innerEdges as $innerEdge) {
@@ -579,7 +579,7 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
         }
 
         return md5(
-              $this->_fill->getHashCode()
+            $this->_fill->getHashCode()
             . $this->_font->getHashCode()
             . $this->_borders->getHashCode()
             . $this->_alignment->getHashCode()

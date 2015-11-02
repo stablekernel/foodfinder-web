@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database', 'session', 'xmlrpc');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'file','cookie');
+$autoload['helper'] = array('url', 'file', 'cookie');
 
 
 /*
@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('helper','adminhelper','schoolmodel');
+$autoload['model'] = array('helper', 'adminhelper', 'schoolmodel');
 
 
 /* End of file autoload.php */
