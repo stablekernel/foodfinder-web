@@ -285,10 +285,6 @@ class Adminhelper extends CI_Model {
 			$this->db->insert('ff_provider',$insert);
 			$provider_id =$this->db->insert_id();
 
-			foreach($data['school'] as $schoolid) {
-				$insertgroup=array('provider_id'=>$provider_id,'school_id'=>$schoolid);
-				$this->db->insert('ff_providergroup',$insertgroup);
-			}
 			$ErrorMessage=3;
 		}
 		return $ErrorMessage;
@@ -307,7 +303,6 @@ class Adminhelper extends CI_Model {
 	function deleteprovider($provider_id)
 	{
 		$this->db->delete('ff_provider', array('provider_id' => $provider_id));
-		$this->db->delete('ff_providergroup', array('provider_id' => $provider_id));
 		return "delete";
 	}
 
@@ -319,20 +314,6 @@ class Adminhelper extends CI_Model {
 		}
 		return $list;
 	}
-
-	public function load_single_schoollist($id) {
-		$this->db->select('*');
-		$this->db->from('ff_providergroup');
-		$this->db->join('ff_school', 'ff_providergroup.school_id = ff_school.school_id', 'left');
-		$this->db->where('ff_providergroup.provider_id', $id);
-		$query = $this->db->get();
-		$list = array();
-		foreach ($query->result() as $row){
-			$list[] = $row;
-		}
-		return $list;
-	}
-
 
 	public function updateprovider($id,$data)
 	{
@@ -359,32 +340,11 @@ class Adminhelper extends CI_Model {
 			$insert=array('providername'=>$data['providername'],'streetaddress1'=>$data['streetaddress1'],'streetaddress2'=>$data['streetaddress2'],'city'=>$data['city'],'county'=>$data['county'],'state'=>$data['state'],'zipcode'=>$data['zipcode'],'phonenumber'=>$data['phonenumber'],'url'=>$data['url'],'email'=>$data['pemail'],'contactperson'=>$data['contactperson'],'operatingdays'=>$data['operatingdays'],'operatinghours'=>$data['operatinghours'],'servicearea'=>$data['servicearea'],'languages'=>$data['languages'],'services1'=>$data['services1'],'services2'=>$data['services2'],'services3'=>$data['services3'],'latitude'=>$latitude,'longitude'=>$longitude);
 			$res = $this->db->update('ff_provider', $insert, "provider_id = '{$id}'");
 			$provider_id =$id;
-			$this->db->delete('ff_providergroup', array('provider_id' => $provider_id));			
 
-			foreach($data['school'] as $schoolid) {
-				$insertgroup=array('provider_id'=>$provider_id, 'school_id'=>$schoolid);
-				$this->db->insert('ff_providergroup', $insertgroup);
-			}
 			$ErrorMessage=3;
 		}
 		return $ErrorMessage;
-
-		/*$address = $data['schooladdress1']." ".$data['city']." ".$data['state']." ".$data['county']; // Google HQ
-		$add = str_replace(" ","+",$address);
-		$jsondata=file_get_contents('http://maps.google.com/maps/api/geocode/json?address='.$add.'&sensor=false');
-		$output= json_decode($jsondata);
-		$latitude = $output->results[0]->geometry->location->lat;
-		$longitude = $output->results[0]->geometry->location->lng;
-		$insert=array('providername'=>$data['providername'],'streetaddress1'=>$data['streetaddress1'],'streetaddress2'=>$data['streetaddress2'],'city'=>$data['city'],'county'=>$data['county'],'state'=>$data['state'],'zipcode'=>$data['zipcode'],'phonenumber'=>$data['phonenumber'],'url'=>$data['url'],'email'=>$data['email'],'contactperson'=>$data['contactperson'],'operatingdays'=>$data['operatingdays'],'operatinghours'=>$data['operatinghours'],'servicearea'=>$data['servicearea'],'languages'=>$data['languages'],'services1'=>$data['services1'],'services2'=>$data['services2'],'services3'=>$data['services3'],'latitude'=>$latitude,'longitude'=>$longitude);
-		$res = $this->db->update('ff_provider', $insert, "provider_id = '{$id}'");
-		$provider_id =$id;
-		$this->db->delete('ff_providergroup', array('provider_id' => $provider_id));			
-		foreach($data['school'] as $schoolid) {
-			$insertgroup=array('provider_id'=>$provider_id,'school_id'=>$schoolid);
-			$this->db->update('ff_providergroup',$insertgroup);				
-		}		
-		return true;*/
-	}	
+	}
 	
 }
 ?>

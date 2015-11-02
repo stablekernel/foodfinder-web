@@ -12,7 +12,7 @@
             	<div class="p_street1"><?php echo $provider[0]['streetaddress1'];?></div>
             	<div class="p_street2"><?php echo $provider[0]['streetaddress2'];?></div>
             	<div class="p_city"><?php echo $provider[0]['city'];?>, <?php echo $provider[0]['state'];?>, <?php echo $provider[0]['zipcode'];?></div>
-            	<div class="p_country"><?php echo $provider[0]['County'];?></div>
+            	<div class="p_country"><?php echo $provider[0]['county'];?></div>
 
             	<div class="p_zip">
                     <?php echo $provider[0]['contactperson'];?>

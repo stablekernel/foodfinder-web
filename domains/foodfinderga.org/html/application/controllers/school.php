@@ -95,8 +95,7 @@ class School extends CI_Controller {
 		
 		$rad=7;
 		$schoolmapresult=$this->schoolmodel->searchhome($latitude,$longitude,$rad);
-		//$schoolmapresult=$this->schoolmodel->searchschoolmap($schoolid);
-		//                echo '<pre/>'; print_r($schoolmapresult);exit;
+
 		if (!empty($schoolmapresult))
 		{
 		//$centerlatitude=$schoolmapresult['0']["lat"];

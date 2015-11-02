@@ -22,17 +22,6 @@ class Schoolmodel extends CI_Model {
 		return $list;
 	}
 
-	function searchschoolmap($schoolid)
-	{
-		//$results= mysql_query("SELECT p.provider_id, p.providername, p.latitude, p.longitude FROM `ff_providergroup` pg LEFT JOIN ff_provider p ON pg.provider_id=p.provider_id where school_id='$schoolid'");
-		$results= mysql_query("SELECT s.latitude AS lat ,s.longitude AS lon,s.school_name, p.provider_id, p.providername, p.latitude, p.longitude FROM `ff_providergroup` pg LEFT JOIN ff_provider p ON pg.provider_id = p.provider_id LEFT JOIN ff_school s ON pg.school_id = s.school_id WHERE pg.school_id = '$schoolid'");
-		$list = array();		
-		while($row = mysql_fetch_assoc($results)):
-			$list[] = $row;
-		endwhile;		
-		return $list;
-	}
-
 	function singleproviderdetails($providerid)
 	{
 		$results= mysql_query("SELECT * FROM ff_provider WHERE provider_id='$providerid'");

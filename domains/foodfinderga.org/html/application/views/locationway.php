@@ -17,7 +17,7 @@
                         <form id="addgroup-form" method="post" novalidate='novalidate' class='validate' accept-charset="utf-8">
                             <div align="center">
                                 <img class="locimg" src="<?php echo base_url(); ?>img/front/loc_icon.png" title="Click here for location search"/>
-                                <input type="text" value="" placeholder="Enter your street address, city name, zip code, or county" name="homeaddress" id="homeaddress" />
+                                <input type="text" value="" style="width:85%;" placeholder="Enter your street address, city name, zip code, or county" name="homeaddress" id="homeaddress" />
                                 <button id="submit" name="submit" class="button_searchschool">GO!</button>
                             </div> 
                         </form>                    
