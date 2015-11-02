@@ -45,7 +45,7 @@
                                 </label>
 
                                 <div class="controls"><?php $state = $results[0]->state; ?>
-                                    <select id="state" name="state" onchange="getcitylist(this.value)">
+                                    <select id="state" name="state" onchange="getcitylist(this.value)" onload="getcitylist(this.value)">
                                         <option value="">Select state</option>
                                         <?php foreach ($allstatelist as $fields) { ?>
                                             <option
@@ -61,6 +61,7 @@
 
                                 <div class="controls" id="citynamediv">
                                     <?php $city = $results[0]->city; ?>
+
                                     <?php if (!empty($getproductname)) { ?>
                                         <select id="city" name="city">
                                             <option value="">Select city</option>
@@ -69,11 +70,12 @@
                                                     value="<?php echo $getproductname[$i]->product_id; ?>"><?php echo $getproductname[$i]->product_name; ?></option>
                                             <?php } ?>
                                         </select>
-                                    <?php } else { ?>
-                                        <select id="city" name="city">
-                                            <option value="<?php echo $city ?>"><?php echo $city ?></option>
-                                        </select>
-                                    <?php } ?>
+                                        <?php
+                                    } else {
+                                        echo $allcitylist;
+
+                                    }
+                                    ?>
                                 </div>
                             </div>
                             <div class="control-group">

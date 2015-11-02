@@ -166,6 +166,10 @@ class Admin extends CI_Controller
     public function schooledit()
     {
         $id = $this->uri->segment(3);
+        $school = $this->adminhelper->getSchool($id);
+        $state = $school['0']['state'];
+        $citylist = $this->adminhelper->getCityByStateSelectElement($state);
+
         if (isset($_POST["updateschool"])):
             $data = $this->input->post();
             $checkvalue = $this->adminhelper->checkschooladdress1($id, $data);
@@ -191,6 +195,7 @@ class Admin extends CI_Controller
             $data['pageName'] = $this->uri->segment(2);
             $data['results'] = $this->adminhelper->load_single_school($id);
             $data["allstatelist"] = $this->adminhelper->allstatelist();
+            $data["allcitylist"] = $citylist;
             $this->load->view('admin/header', $data);
             $this->load->view('admin/editschool');
             $this->load->view('admin/footer');

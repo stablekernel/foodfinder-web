@@ -45,7 +45,7 @@
                                 </label>
 
                                 <div class="controls"><?php $state = $results[0]->state; ?>
-                                    <select id="state" name="state" onchange="getcitylist(this.value)">
+                                    <select id="state" name="state" onchange="getcitylist(this.value)" onload="getcitylist(this.value)">
                                         <option value="">Select state</option>
                                         <?php foreach ($allstatelist as $fields) { ?>
                                             <option
