@@ -80,7 +80,7 @@
 
                                 <div class="controls">
                                     <input type="text" class="input-large" name="county" id="county" maxlength="100"
-                                           value="Gwinnett"/>
+                                           value=""/>
                                 </div>
                             </div>
                             <div class="control-group">
