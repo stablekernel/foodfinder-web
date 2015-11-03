@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -41,8 +41,8 @@
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
-$route['admin']= "admin/index/";
-$route['admin/(:any)']= "admin/$1";
+$route['admin'] = "admin/index/";
+$route['admin/(:any)'] = "admin/$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
