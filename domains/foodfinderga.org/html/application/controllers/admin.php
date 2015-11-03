@@ -166,7 +166,7 @@ class Admin extends CI_Controller
     public function schooledit()
     {
         $id = $this->uri->segment(3);
-        $school = $this->adminhelper->getSchool($id);
+        $school = $this->adminhelper->load_single_school($id);
         $state = $school['0']['state'];
         $citylist = $this->adminhelper->getCityByStateSelectElement($state);
 
@@ -313,7 +313,7 @@ class Admin extends CI_Controller
     public function provideredit()
     {
         $id = $this->uri->segment(3);
-        $provider = $this->adminhelper->getProvider($id);
+        $provider = $this->adminhelper->load_single_provider($id);
         $state = $provider['0']['state'];
         $citylist = $this->adminhelper->getCityByStateSelectElement($state, $provider);
 
