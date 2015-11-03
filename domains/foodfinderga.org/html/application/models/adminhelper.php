@@ -24,15 +24,15 @@ class Adminhelper extends CI_Model
         return $list;
     }
 
-    public function getCityByStateSelectElement($statecode, $provider = null)
+    public function getCityByStateSelectElement($statecode, $location = null)
     {
 
         $statelist = "";
         $query = mysql_query("Select * from ff_cities where state_code='$statecode'");
-        if (isset($provider) && !is_null($provider)) {
+        if (isset($location) && !is_null($location)) {
             $statelist .= '<select id="city" name="city"><option value="">Select city</option>';
             while ($row = mysql_fetch_assoc($query)):
-                $statelist .= ($provider[0]['city'] == $row['city']) ? '<option value="' . $row['city'] . '" selected>' . $row['city'] . '</option>' : '<option value="' . $row['city'] . '">' . $row['city'] . '</option>';
+                $statelist .= ($location[0]['city'] == $row['city']) ? '<option value="' . $row['city'] . '" selected>' . $row['city'] . '</option>' : '<option value="' . $row['city'] . '">' . $row['city'] . '</option>';
             endwhile;
             $statelist .= "</select>";
         } else {

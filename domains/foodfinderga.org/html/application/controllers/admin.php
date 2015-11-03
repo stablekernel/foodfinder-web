@@ -168,7 +168,7 @@ class Admin extends CI_Controller
         $id = $this->uri->segment(3);
         $school = $this->adminhelper->load_single_school($id);
         $state = $school['0']['state'];
-        $citylist = $this->adminhelper->getCityByStateSelectElement($state);
+        $citylist = $this->adminhelper->getCityByStateSelectElement($state, $school);
 
         if (isset($_POST["updateschool"])):
             $data = $this->input->post();
@@ -338,7 +338,6 @@ class Admin extends CI_Controller
             $data = $this->session->userdata('user');
             $data = array();
             $data['pageName'] = $this->uri->segment(2);
-            $data['school'] = $this->adminhelper->allschools();
             $data["allstatelist"] = $this->adminhelper->allstatelist();
             $data["allcitylist"] = $citylist;
             $data['results'] = $this->adminhelper->load_single_provider($id);
