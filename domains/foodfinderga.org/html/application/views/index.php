@@ -9,7 +9,7 @@
             </div>
 
             <div class="footer-bg clearfix">
-                <div align="center" class="homefont2">Click or Tap or a Button To Find Food Near Your:</div>
+                <div align="center" class="homefont2">Click or Tap a Button To Find Food Near Your:</div>
                 <div id="mainNav" class="icon_layout_outer">
                     <div class="icon_layout_inner">
                         <div class="icon_div"><a href="<?php echo site_url('school'); ?>"><img
