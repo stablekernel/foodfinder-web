@@ -2415,6 +2415,7 @@ Layout: Responsive
 .fc-main-box{opacity:1; display:none; margin:15px auto 0 auto; width:930px; position:relative; z-index:1000003;}
 .fc-widget_close{opacity:1; content:url(http://i1338.photobucket.com/albums/o691/WeCause/X_zpse4a7e538.png); position:absolute; z-index=1000004; right:-16px; top:-16px; display:block; cursor:pointer; }
 .floating_button{display: block; margin-top: 0px; margin-left: 0px; width:auto ; height: auto; position:fixed; z-index:999999; overflow: auto;}
+.donate_button{width: 120px; background:#f1bc31; margin-top: 25px; border-radius:5px 5px 5px 5px; font-weight:normal; font-family:Arial, Helvetica, sans-serif; padding:4px 10px 4px 10px; font-size:24px; color:#fff;text-align:center; cursor:pointer;border:2px solid #fff;box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); z-index:999999}
 @keyframes backfadesin {
   from { opacity:0; }
   to {opacity:.5;}
