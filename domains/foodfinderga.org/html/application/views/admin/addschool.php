@@ -60,19 +60,9 @@
                                 </label>
 
                                 <div class="controls" id="citynamediv">
-                                    <?php if (!empty($getproductname)) { ?>
-                                        <select id="city" name="city">
-                                            <option value="">Select city</option>
-                                            <?php for ($i = 0; $i < count($getproductname); $i++) { ?>
-                                                <option
-                                                    value="<?php echo $getproductname[$i]->product_id; ?>"><?php echo $getproductname[$i]->product_name; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    <?php } else { ?>
-                                        <select id="city" name="city">
-                                            <option value="">Select city</option>
-                                        </select>
-                                    <?php } ?>
+                                    <select id="city" name="city">
+                                        <option value="">Select city</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="control-group">
@@ -80,7 +70,7 @@
 
                                 <div class="controls">
                                     <input type="text" class="input-large" name="county" id="county" maxlength="100"
-                                           value="Gwinnett"/>
+                                           value=""/>
                                 </div>
                             </div>
                             <div class="control-group">

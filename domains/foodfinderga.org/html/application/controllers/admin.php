@@ -166,6 +166,10 @@ class Admin extends CI_Controller
     public function schooledit()
     {
         $id = $this->uri->segment(3);
+        $school = $this->adminhelper->load_single_school($id);
+        $state = $school['0']['state'];
+        $citylist = $this->adminhelper->getCityByStateSelectElement($state, $school);
+
         if (isset($_POST["updateschool"])):
             $data = $this->input->post();
             $checkvalue = $this->adminhelper->checkschooladdress1($id, $data);
@@ -191,6 +195,7 @@ class Admin extends CI_Controller
             $data['pageName'] = $this->uri->segment(2);
             $data['results'] = $this->adminhelper->load_single_school($id);
             $data["allstatelist"] = $this->adminhelper->allstatelist();
+            $data["allcitylist"] = $citylist;
             $this->load->view('admin/header', $data);
             $this->load->view('admin/editschool');
             $this->load->view('admin/footer');
@@ -308,7 +313,7 @@ class Admin extends CI_Controller
     public function provideredit()
     {
         $id = $this->uri->segment(3);
-        $provider = $this->adminhelper->getProvider($id);
+        $provider = $this->adminhelper->load_single_provider($id);
         $state = $provider['0']['state'];
         $citylist = $this->adminhelper->getCityByStateSelectElement($state, $provider);
 
@@ -333,7 +338,6 @@ class Admin extends CI_Controller
             $data = $this->session->userdata('user');
             $data = array();
             $data['pageName'] = $this->uri->segment(2);
-            $data['school'] = $this->adminhelper->allschools();
             $data["allstatelist"] = $this->adminhelper->allstatelist();
             $data["allcitylist"] = $citylist;
             $data['results'] = $this->adminhelper->load_single_provider($id);
