@@ -7,7 +7,7 @@
 #
 # Host: external-db.s188066.gridserver.com (MySQL 5.1.67-rel14.3)
 # Database: db188066_beta
-# Generation Time: 2015-11-06 21:45:58 +0000
+# Generation Time: 2015-11-07 19:32:36 +0000
 # ************************************************************
 
 
@@ -30808,7 +30808,7 @@ VALUES
 	(1175,'The Sycamore Tree','204 Central Avenue West','','Blackshear','Pierce','GA','31516','','','','','','','','','','','','31.3032365','-82.2411918'),
 	(1176,'New Hope Fellowship Baptist Church','1492 Blue Ridge Highway','','Blairsville','Union','GA','30512','','','','','','','','','','','','34.8553068','-83.9842055'),
 	(1177,'House of Prayer/Cottage Food Bank - Blairsville','1400 Pat Colwell Road','','Blairsville','Union','GA','30512','','','','','','','','','','','','34.8882717','-84.0114895'),
-	(1178,'First Baptist Church of Blairsville','296 Blueridge Street','','Blairsville','Union County','GA','30514','7067452469','http://www.gamountainfoodbank.org/','','','Saturday','9AM-12PM','COUNTY WIDE','English','Food','','','34.8729576','-83.9628207'),
+	(1178,'First Baptist Church of Blairsville','296 Blueridge Street','','Blairsville','Union','GA','30514','7067452469','http://www.gamountainfoodbank.org/','','','Saturday','9AM-12PM','COUNTY WIDE','English','Food','','','34.8729576','-83.9628207'),
 	(1179,'Alpha UMC Backpack','5 Highway 80 East','','Bloomingdale','Chatham','GA','31302','','','','','','','','','','','','32.3507509','-88.7433797'),
 	(1180,'Fanning County Family Connection','101 Industrial Park RD','','Blue Ridge','Fannin','GA','30513','','','','','','','','','','','','34.8842707','-84.2998807'),
 	(1181,'Bonaire United Methodist Church','144 Elm Street','','Bonaire','Houston','GA','31005','','','','','','','','','','','','32.5455479','-83.599421'),
@@ -31035,9 +31035,9 @@ VALUES
 	(1402,'South Dalton Baptist ','498 Lakemont Drive','','Dalton','Whitfield','GA','30721','','','','','','','','','','','','34.7579886','-84.9718207'),
 	(1403,'New Haven UNC','4040 S Dixie Highway','','Dalton','Whitfield','GA','30721','','','','','','','','','','','','34.6594516','-84.9594861'),
 	(1404,'First Methodist','500 S. Thornton Avenue','','Dalton','Whitfield','GA','30722','','','','','','','','','','','','34.767021','-84.9727939'),
-	(1405,'Unseen Hands','4632 Auraria Road','','Dawsonville','Dawson County','GA','30534','6784562082','http://www.gamountainfoodbank.org/','','','Saturday','9AM-12PM','COUNTY WIDE','English','Food','','','34.469609','-84.023111'),
-	(1406,'Jesus Name Apostolic Church','77 Hugh Stowers Road','','Dawsonville','Dawson County','GA','30534','7062657990','http://www.gamountainfoodbank.org/','','','Tuesday, 2nd Friday, Saturday','3PM-5PM, 10AM-1PM, 10AM-12PM','COUNTY WIDE','English','Food','','','34.390181','-84.086892'),
-	(1407,'Ric-Rack Food Pantry','829 Hwy. 9 North','','Dawsonville','Dawson County','GA','30534','7703800084','http://www.gamountainfoodbank.org/','','','Monday, Wednesday, Friday','12PM-3PM','COUNTY WIDE','English','Food','','','34.4254636','-84.1060687'),
+	(1405,'Unseen Hands','4632 Auraria Road','','Dawsonville','Dawson','GA','30534','6784562082','http://www.gamountainfoodbank.org/','','','Saturday','9AM-12PM','COUNTY WIDE','English','Food','','','34.469609','-84.023111'),
+	(1406,'Jesus Name Apostolic Church','77 Hugh Stowers Road','','Dawsonville','Dawson','GA','30534','7062657990','http://www.gamountainfoodbank.org/','','','Tuesday, 2nd Friday, Saturday','3PM-5PM, 10AM-1PM, 10AM-12PM','COUNTY WIDE','English','Food','','','34.390181','-84.086892'),
+	(1407,'Ric-Rack Food Pantry','829 Hwy. 9 North','','Dawsonville','Dawson','GA','30534','7703800084','http://www.gamountainfoodbank.org/','','','Monday, Wednesday, Friday','12PM-3PM','COUNTY WIDE','English','Food','','','34.4254636','-84.1060687'),
 	(1408,'Fort Creek Baptist Church','1497 Fort Creek Rd','','Dearing','Mcduffie','GA','30901','7065970707','','','','Thursday','9 a.m. - 2:30 p.m.','','','','','','33.3519419','-82.4263273'),
 	(1409,'St. Peter & Paul Catholic Church ','2560 Tilson Road','','Decatur ','Dekalb','GA','30032','','','','','','','','','','','','33.7280688','-84.291601'),
 	(1410,'EOA Dekalb ','3597 Covington Highway','','Decatur ','Dekalb','GA','30032','','','','','','','','','','','','33.7633944','-84.2511806'),
@@ -31099,7 +31099,7 @@ VALUES
 	(1466,'Glenloch Baptist Church','2807 Glenloch Road','','Franklin','Heard','GA','30217','','','','','','','','','','','','33.411868','-85.0867615'),
 	(1467,'Franklin Housing Authority Inc.','900 S. River Rd.','','Franklin','Heard','GA','30217','','','','','','','','','','','','33.26625','-85.09739'),
 	(1468,'Battle Buddy Resource Center','7200 Anderson Ave.','','Ft. Benning','Muscogee','GA','31905','','','','','','','','','','','','32.3617284','-84.9757795'),
-	(1469,'Georgia Mountain Food Bank','1642 Calvary Church Road','','Gainesville','Hall County','GA','30507','','','','','','','Region Wide','','','','','34.2475919','-83.8173173'),
+	(1469,'Georgia Mountain Food Bank','1642 Calvary Church Road','','Gainesville','Hall','GA','30507','','','','','','','Region Wide','','','','','34.2475919','-83.8173173'),
 	(1470,'Riverbend Baptist Church','1715 Cleveland Hwy','','Gainesville','Hall','GA','30501','','','','','','','','','','','','34.330257','-83.814173'),
 	(1471,'The John Paul II Training Center','177 Atlanta Rd','','Gainesville','Hall','GA','30501','','','','','','','','','','','','34.2864032','-83.838254'),
 	(1472,'Grace Episcopal Church','422 Brenau Avenue','','Gainesville','Hall','GA','30501','','','','','','','','','','','','34.3021695','-83.8229585'),
@@ -31201,7 +31201,7 @@ VALUES
 	(1568,'Louisville Food Pantry','718 W Nelms St','','Louisville','Jefferson','GA','30434','4786250890','','','','Tuesday, Friday','9 a.m.- 11 a.m. & also by appointment','Food Pantry','','','','','33.0061949','-82.4143824'),
 	(1569,'Lula UMC - Shared Blessings','5915 Toombs Street','','Lula','Hall','GA','30554','','','','','','','','','','','','34.3867649','-83.670062'),
 	(1570,'Lula Church','6455 Main Street','','Lula','Hall','GA','30554','','','','','','','','','','','','34.396445','-83.6574909'),
-	(1571,'Lula UMC - Shared Blessings','5915 Toombs Street','','Lula','Hall County','GA','30554','','http://www.gamountainfoodbank.org/','','','1st Saturday','8AM-10AM','COUNTY WIDE','English','Food','','','34.3867649','-83.670062'),
+	(1571,'Lula UMC - Shared Blessings','5915 Toombs Street','','Lula','Hall','GA','30554','','http://www.gamountainfoodbank.org/','','','1st Saturday','8AM-10AM','COUNTY WIDE','English','Food','','','34.3867649','-83.670062'),
 	(1572,'Ebenezer Baptist Church','284 Martin Luther King Drive','','Lumpkin','Stewart','GA','31815','','','','','','','','','','','','32.0519002','-84.7939471'),
 	(1573,'Rehoboth Baptist Church','155 North Main Street','','Luthersville','Meriwether','GA','30251','','','','','','','','','','','','33.2231719','-84.7477157'),
 	(1574,'Southeast Georgia Communities Project','300 S State St','','Lyons','Toombs','GA','30436','9125265451','','','','Monday, Tuesday, Wednesday, Thursday','Mon. (10 a.m.-4 p.m), Tuesday-Thursday (8 a.m. -5 p.m.)','','','','','','32.1991355','-82.3208961'),
@@ -31302,8 +31302,8 @@ VALUES
 	(1669,'Coweta Community Food Pantry Shenandoah-Near Science Center ','253 Temple Ave','','Newnan ','Coweta','GA','30263','','','','','','','','','','','','33.3875931','-84.8202435'),
 	(1670,'St. George Catholic Church ','771 Roscoe Road','','Newnan ','Fayette ','GA','30263','','','','','','','','','','','','33.4134501','-84.8100631'),
 	(1671,'One Roof Ecumenical Alliance Outreach ','320 Temple Avenue','C','Newnan ','Coweta','GA','30264','','','','','','','','','','','','33.3915018','-84.8249961'),
-	(1672,'South Hall Community Food Pantry','4211 Walnut Street','','Oakwood','Hall County','GA','30566','6788656588','http://www.gamountainfoodbank.org/','','','Monday, Saturday','3PM-5PM, 10AM-12PM','COUNTY WIDE','English','Food','','','34.2274545','-83.8837347'),
-	(1673,'Spirit of Joy Church','5004 McEver Road','','Oakwood','Hall County','GA','30566','6783169230','http://www.gamountainfoodbank.org/','','','Saturday','9AM-12PM','COUNTY WIDE','English','Food','','','34.235559','-83.896763'),
+	(1672,'South Hall Community Food Pantry','4211 Walnut Street','','Oakwood','Hall','GA','30566','6788656588','http://www.gamountainfoodbank.org/','','','Monday, Saturday','3PM-5PM, 10AM-12PM','COUNTY WIDE','English','Food','','','34.2274545','-83.8837347'),
+	(1673,'Spirit of Joy Church','5004 McEver Road','','Oakwood','Hall','GA','30566','6783169230','http://www.gamountainfoodbank.org/','','','Saturday','9AM-12PM','COUNTY WIDE','English','Food','','','34.235559','-83.896763'),
 	(1674,'Palmetto Baptist Church','504 Center Street','','Palmetto','Fulton','GA','30268','','','','','','','','','','','','33.5193848','-84.6693401'),
 	(1675,'Real Life Center','220 Parkade Court','','Peachtree City','Fayette','GA','30269','','','','','','','','','','','','33.3541755','-84.5526736'),
 	(1676,'New Hope Baptist Church of Perry','1300 Washington St','','Perry','Houston','GA','31069','','','','','','','','','','','','32.461727','-83.732949'),
