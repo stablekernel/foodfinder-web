@@ -14,6 +14,29 @@ class Adminhelper extends CI_Model
         parent::_construct();
     }
 
+    public function getProvider($id)
+    {
+        $results = mysql_query("Select * from ff_provider WHERE provider_id = $id");
+
+        $list = array();
+        while ($row = mysql_fetch_assoc($results)) {
+            $list[] = $row;
+        }
+        return $list;
+    }
+
+    public function getSchool($id)
+    {
+        $results = mysql_query("Select * from ff_school WHERE school_id = $id");
+
+        $list = array();
+        while ($row = mysql_fetch_assoc($results)) {
+            $list[] = $row;
+        }
+        return $list;
+
+    }
+
     public function allstatelist()
     {
         $results = mysql_query("Select * from ff_states");
