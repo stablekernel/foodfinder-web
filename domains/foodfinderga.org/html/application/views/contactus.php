@@ -15,7 +15,9 @@
                             src="<?php echo base_url(); ?>img/front/homeicon.png"/></a></div>
                 <div class="termpad_wrap contactus_wrap">
                     <h2 style="text-align: center">Contact Us</h2>
-                    <h4 style="text-align: center"><a href="mailto:info@foodfinderga.org">info@foodfinderga.org</a></h4>
+                    <h4 style="text-align: center">Executive Director:  Lynn Griffin</h4>
+                    <h4 style="text-align: center">Phone: 770-527-2181</h4>
+                    <h4 style="text-align: center">Email: <a href="mailto:info@foodfinderga.org">info@foodfinderga.org</a></h4>
                 </div>
                 <?php include('footer_menu.php'); ?>
             </div>
