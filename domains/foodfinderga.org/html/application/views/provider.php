@@ -46,9 +46,14 @@
                         <?php if (($provider[0]['languages'])) { ?>
                             <div class="p_zip"><?php echo $provider[0]['languages']; ?></div>
                         <?php } ?>
-
-                        <?php if (array_key_exists('services', $provider[0])) { ?>
-                            <div class="p_zip"><?php echo $provider[0]['services']; ?></div>
+                        <?php if (($provider[0]['services1'])) { ?>
+                            <div class="p_zip"><?php echo $provider[0]['services1']; ?></div>
+                        <?php } ?>
+                        <?php if (($provider[0]['services2'])) { ?>
+                            <div class="p_zip"><?php echo $provider[0]['services2']; ?></div>
+                        <?php } ?>
+                        <?php if (($provider[0]['services3'])) { ?>
+                            <div class="p_zip"><?php echo $provider[0]['services3']; ?></div>
                         <?php } ?>
                     </div>
                 </div>
