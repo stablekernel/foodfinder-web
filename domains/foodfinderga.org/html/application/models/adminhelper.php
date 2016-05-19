@@ -313,6 +313,12 @@ class Adminhelper extends CI_Model
             $this->db->insert('ff_provider', $insert);
             $provider_id = $this->db->insert_id();
 
+            try {
+                $this->upsertherokuprovider($provider_id, $data, $latitude, $longitude);
+            } catch (PDOException $e) {
+                //NOP
+            }
+
             $ErrorMessage = 3;
         }
         return $ErrorMessage;
@@ -332,6 +338,11 @@ class Adminhelper extends CI_Model
     function deleteprovider($provider_id)
     {
         $this->db->delete('ff_provider', array('provider_id' => $provider_id));
+        try {
+            $this->deleteherokuprovider($provider_id);
+        } catch (PDOException $e) {
+            //NOP
+        }
         return "delete";
     }
 
@@ -367,13 +378,87 @@ class Adminhelper extends CI_Model
             $latitude = $output->results[0]->geometry->location->lat;
             $longitude = $output->results[0]->geometry->location->lng;
 
-            $insert = array('providername' => $data['providername'], 'streetaddress1' => $data['streetaddress1'], 'streetaddress2' => $data['streetaddress2'], 'city' => $data['city'], 'county' => $data['county'], 'state' => $data['state'], 'zipcode' => $data['zipcode'], 'phonenumber' => $data['phonenumber'], 'url' => $data['url'], 'email' => $data['pemail'], 'contactperson' => $data['contactperson'], 'operatingdays' => $data['operatingdays'], 'operatinghours' => $data['operatinghours'], 'servicearea' => $data['servicearea'], 'languages' => $data['languages'], 'services1' => $data['services1'], 'services2' => $data['services2'], 'services3' => $data['services3'], 'latitude' => $latitude, 'longitude' => $longitude);
+            $insert = array('providername' => $data['providername'], 'streetaddress1' => $data['streetaddress1'], 'streetaddress2' => $data['streetaddress2'], 'city' => $data['city'], 'county' => $data['county'], 'state' => $data['state'], 'zipcode' => $data['zipcode'], 'phonenumber' => $data['phonenumber'],
+                'url' => $data['url'], 'email' => $data['pemail'], 'contactperson' => $data['contactperson'], 'operatingdays' => $data['operatingdays'], 'operatinghours' => $data['operatinghours'], 'servicearea' => $data['servicearea'], 'languages' => $data['languages'],
+                'services1' => $data['services1'], 'services2' => $data['services2'], 'services3' => $data['services3'], 'latitude' => $latitude, 'longitude' => $longitude);
             $res = $this->db->update('ff_provider', $insert, "provider_id = '{$id}'");
+
             $provider_id = $id;
+
+            try {
+                $this->upsertherokuprovider($id, $data, $latitude, $longitude);
+            } catch (PDOException $e) {
+                //NOP
+            }
 
             $ErrorMessage = 3;
         }
         return $ErrorMessage;
+    }
+
+    private function upsertherokuprovider($id, $data, $latitude, $longitude) {
+        $heroku_db = $this->herokudb();
+
+        $insert = "INSERT INTO ff_provider (provider_id, providername, streetaddress1, streetaddress2, city, county, state, zipcode, phonenumber, url, email, contactperson, operatingdays, operatinghours, servicearea, languages, services1, services2, services3, latitude, longitude) 
+                       SELECT $id, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+                       WHERE NOT EXISTS (SELECT * FROM ff_provider WHERE provider_id=$id)";
+        $update = "UPDATE ff_provider 
+                       SET providername=?, streetaddress1=?, streetaddress2=?, city=?, county=?, state=?, zipcode=?, phonenumber=?, url=?, email=?, contactperson=?, operatingdays=?, operatinghours=?, servicearea=?, languages=?, services1=?, services2=?, services3=?, latitude=?, longitude=?
+                       WHERE provider_id=$id";
+
+        $bind_values = array($data['providername'], $data['streetaddress1'], $data['streetaddress2'], $data['city'], $data['county'], $data['state'], $data['zipcode'], $data['phonenumber'],
+            $data['url'], $data['pemail'], $data['contactperson'], $data['operatingdays'], $data['operatinghours'], $data['servicearea'], $data['languages'],
+            $data['services1'], $data['services2'], $data['services3'], $latitude, $longitude);
+
+        $insert_sth = $heroku_db->prepare($insert);
+        $update_sth = $heroku_db->prepare($update);
+
+        $update_sth->execute($bind_values);
+        $insert_sth->execute($bind_values);
+
+        $heroku_db = null;
+    }
+
+    private function insertherokuprovider($id, $data, $latitude, $longitude) {
+        $heroku_db = $this->herokudb();
+
+        $insert = "INSERT INTO ff_provider (provider_id, providername, streetaddress1, streetaddress2, city, county, state, zipcode, phonenumber, url, email, contactperson, operatingdays, operatinghours, servicearea, languages, services1, services2, services3, latitude, longitude) 
+                       SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?";
+
+
+        $bind_values = array($id, $data['providername'], $data['streetaddress1'], $data['streetaddress2'], $data['city'], $data['county'], $data['state'], $data['zipcode'], $data['phonenumber'],
+            $data['url'], $data['pemail'], $data['contactperson'], $data['operatingdays'], $data['operatinghours'], $data['servicearea'], $data['languages'],
+            $data['services1'], $data['services2'], $data['services3'], $latitude, $longitude);
+
+        $insert_sth = $heroku_db->prepare($insert);
+
+        $insert_sth->execute($bind_values);
+
+        $heroku_db = null;
+    }
+
+    private function deleteherokuprovider($id) {
+        $heroku_db = $this->herokudb();
+
+        $delete = "DELETE FROM ff_provider WHERE provider_id=?";
+
+        $bind_values = array($id);
+
+        $delete_sth = $heroku_db->prepare($delete);
+
+        $delete_sth->execute($bind_values);
+
+        $heroku_db = null;
+    }
+
+    private function herokudb() {
+        $heroku_dbname = "dd7vqrvv3200jq";
+        $heroku_dbhost = "ec2-107-22-235-119.compute-1.amazonaws.com";
+        $heroku_dbuser = "akxkinxyvbczqs";
+        $heroku_dbpass = "1Cd1wbAixMj4PPcZbXpjpeFxOY";
+        $heroku_db = new PDO("pgsql:dbname=$heroku_dbname;host=$heroku_dbhost;user=$heroku_dbuser;password=$heroku_dbpass");
+
+        return $heroku_db;
     }
 
 }
