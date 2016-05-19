@@ -419,24 +419,6 @@ class Adminhelper extends CI_Model
         $heroku_db = null;
     }
 
-    private function insertherokuprovider($id, $data, $latitude, $longitude) {
-        $heroku_db = $this->herokudb();
-
-        $insert = "INSERT INTO ff_provider (provider_id, providername, streetaddress1, streetaddress2, city, county, state, zipcode, phonenumber, url, email, contactperson, operatingdays, operatinghours, servicearea, languages, services1, services2, services3, latitude, longitude) 
-                       SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?";
-
-
-        $bind_values = array($id, $data['providername'], $data['streetaddress1'], $data['streetaddress2'], $data['city'], $data['county'], $data['state'], $data['zipcode'], $data['phonenumber'],
-            $data['url'], $data['pemail'], $data['contactperson'], $data['operatingdays'], $data['operatinghours'], $data['servicearea'], $data['languages'],
-            $data['services1'], $data['services2'], $data['services3'], $latitude, $longitude);
-
-        $insert_sth = $heroku_db->prepare($insert);
-
-        $insert_sth->execute($bind_values);
-
-        $heroku_db = null;
-    }
-
     private function deleteherokuprovider($id) {
         $heroku_db = $this->herokudb();
 
@@ -451,7 +433,8 @@ class Adminhelper extends CI_Model
         $heroku_db = null;
     }
 
-    private function herokudb() {
+    private function herokudb()
+    {
         $heroku_dbname = "dd7vqrvv3200jq";
         $heroku_dbhost = "ec2-107-22-235-119.compute-1.amazonaws.com";
         $heroku_dbuser = "akxkinxyvbczqs";
