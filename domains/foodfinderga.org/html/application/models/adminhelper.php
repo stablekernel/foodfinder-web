@@ -435,10 +435,10 @@ class Adminhelper extends CI_Model
 
     private function herokudb()
     {
-        $heroku_dbname = "dd7vqrvv3200jq";
-        $heroku_dbhost = "ec2-107-22-235-119.compute-1.amazonaws.com";
-        $heroku_dbuser = "akxkinxyvbczqs";
-        $heroku_dbpass = "1Cd1wbAixMj4PPcZbXpjpeFxOY";
+        $heroku_dbname = getenv('HTTP_HEROKU_DBNAME');
+        $heroku_dbhost = getenv('HTTP_HEROKU_DBHOST');
+        $heroku_dbuser = getenv('HTTP_HEROKU_DBUSER');
+        $heroku_dbpass = getenv('HTTP_HEROKU_DBPASS');
         $heroku_db = new PDO("pgsql:dbname=$heroku_dbname;host=$heroku_dbhost;user=$heroku_dbuser;password=$heroku_dbpass");
 
         return $heroku_db;
