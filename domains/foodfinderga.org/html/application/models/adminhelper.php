@@ -399,22 +399,19 @@ class Adminhelper extends CI_Model
     private function upsertherokuprovider($id, $data, $latitude, $longitude) {
         $heroku_db = $this->herokudb();
 
-        $insert = "INSERT INTO ff_provider (provider_id, providername, streetaddress1, streetaddress2, city, county, state, zipcode, phonenumber, url, email, contactperson, operatingdays, operatinghours, servicearea, languages, services1, services2, services3, latitude, longitude) 
+        $upsert = "INSERT INTO ff_provider (provider_id, providername, streetaddress1, streetaddress2, city, county, state, zipcode, phonenumber, url, email, contactperson, operatingdays, operatinghours, servicearea, languages, services1, services2, services3, latitude, longitude) 
                        SELECT $id, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
-                       WHERE NOT EXISTS (SELECT * FROM ff_provider WHERE provider_id=$id)";
-        $update = "UPDATE ff_provider 
+                       ON conflict (provider_id) DO UPDATE 
                        SET providername=?, streetaddress1=?, streetaddress2=?, city=?, county=?, state=?, zipcode=?, phonenumber=?, url=?, email=?, contactperson=?, operatingdays=?, operatinghours=?, servicearea=?, languages=?, services1=?, services2=?, services3=?, latitude=?, longitude=?
-                       WHERE provider_id=$id";
+                       WHERE ff_provider.provider_id=$id";
 
         $bind_values = array($data['providername'], $data['streetaddress1'], $data['streetaddress2'], $data['city'], $data['county'], $data['state'], $data['zipcode'], $data['phonenumber'],
             $data['url'], $data['pemail'], $data['contactperson'], $data['operatingdays'], $data['operatinghours'], $data['servicearea'], $data['languages'],
             $data['services1'], $data['services2'], $data['services3'], $latitude, $longitude);
 
-        $insert_sth = $heroku_db->prepare($insert);
-        $update_sth = $heroku_db->prepare($update);
+        $upsert_sth = $heroku_db->prepare($upsert);
 
-        $update_sth->execute($bind_values);
-        $insert_sth->execute($bind_values);
+        $upsert_sth->execute(array_merge($bind_values, $bind_values));
 
         $heroku_db = null;
     }
