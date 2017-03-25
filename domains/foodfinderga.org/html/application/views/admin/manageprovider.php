@@ -78,6 +78,7 @@
                         <thead>
                         <tr>
                             <th align="center" valign="middle">SNo</th>
+                            <th align="center" valign="middle">Provider ID</th>
                             <th align="center" valign="middle">Provider Name</th>
                             <th align="center" valign="middle">Provider Address</th>
                             <th align="center" valign="middle">Phone Number</th>
@@ -93,6 +94,7 @@
                         <?php for ($t = 0; $t < count($providerdetails); $t++) { ?>
                             <tr id="row<?php echo $providerdetails[$t]["provider_id"]; ?>">
                                 <td align="left" valign="middle"><?php echo $t + 1; ?></td>
+                                <td align="left" valign="middle"><?php echo $providerdetails[$t]["provider_id"]; ?></td>
                                 <td align="left"
                                     valign="middle"><?php echo $providerdetails[$t]["providername"]; ?></td>
                                 <td align="left"
